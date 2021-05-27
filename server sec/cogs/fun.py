@@ -112,6 +112,15 @@ class Fun(commands.Cog):
         embed = discord.Embed(title=f"Pat Pat Pat ->{member}", color=16711680)
         embed.set_image(url=hugjson['link'])
         await ctx.send(embed=embed)
+    @commands.command()
+    async def shop(self,ctx):
+        async with aiohttp.ClientSession() as session:
+            request = await session.get('https://api.nitestats.com/v1/epic/store')
+            json = await request.json()
+
+        embed = discord.Embed(title='Item Shop', color=16711680)
+        embed.set_image(url=json['link'])
+        await ctx.send(embed=embed)
         
 
     @commands.command(aliases=['av'])

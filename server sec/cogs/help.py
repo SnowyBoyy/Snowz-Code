@@ -33,26 +33,26 @@ class Help(commands.Cog):
     @commands.command()
     async def credit(self, ctx):
         embed = discord.Embed(color=16711680,description= 'Credits!')
-        embed.add_field(name= "Creator And Date",value='Credits to @$tupid $nowz#9999 For this Bot! It Was created On 5/5/2021!')
+        embed.add_field(name= "Creator And Date",value='Credits to Stupid Snowz™#1337 For this Bot! It Was created On 4/25/2021!')
         embed.add_field(name= "Language + Commands",value= "This Bot Was Created In Python And has 30+ Commands!")
         embed.add_field(name= "Extra",value='The Bot Is Getting More Commands Added By The Day!')
         await ctx.send(embed=embed)
  
-
     
     @commands.command()
     async def help(self, ctx):
         if ctx.channel.type != discord.ChannelType.private:
-            embed = discord.Embed(color=16711680, title="Server Security Commands")
-            embed.add_field(name='Mod Commands', value='`/mod` - Shows **All** Mod Commands!', inline=False)
-            embed.add_field(name='NSFWCommands', value='`/nsfw` - Shows **All** NSFW Commands!', inline=False)
-            embed.add_field(name='Server commands', value='`/server` - Shows **All** Server Commands!', inline=False)
-            embed.add_field(name='Fun Commands', value='`/fun` - Shows **All** Fun Commands!', inline=False)
+            embed = discord.Embed(color=16711680, title="Server Security Commands", description='[Support Server!](https://discord.gg/NxJgYtt8Uv)')
+            embed.add_field(name='Mod Commands', value='`/help mod` - Shows **All** Mod Commands!', inline=False)
+            embed.add_field(name='NSFWCommands', value='`/help nsfw` - Shows **All** NSFW Commands!', inline=False)
+            embed.add_field(name='Server commands', value='`/help server` - Shows **All** Server Commands!', inline=False)
+            embed.add_field(name='Fun Commands', value='`/help fun` - Shows **All** Fun Commands!', inline=False)
             embed.set_footer(text="Coded By Stupid Snowz\n Note This Bot Is Basic And More Commands Will Be Added Later")
             await ctx.send(embed=embed)
+
             
 
-    @commands.command()
+    @commands.command(aliases=['help nsfw'])
     async def nsfw(self, ctx):
         embed = discord.Embed(color=16711680,description= "NSFW Commands")
         embed.add_field(name='Porn',value='`Usage /porn`')
@@ -64,7 +64,7 @@ class Help(commands.Cog):
     
 
 
-    @commands.command()
+    @commands.command(aliases=['help mod'])
     async def mod(self, ctx):
         embed = discord.Embed(color=16711680,description= "Mod Commands")
         embed.add_field(name='Ban',value='`Usage /ban (member)(reason)`')
@@ -80,7 +80,7 @@ class Help(commands.Cog):
         await ctx.send(embed=embed)
      
 
-    @commands.command()
+    @commands.command(aliases=['help fun'])
     async def fun(self, ctx):
         embed = discord.Embed(color=16711680,description= 'Fun Commands')
         embed.add_field(name='Penis',value='`Usage /penis` \nShows PP Size')
@@ -96,7 +96,7 @@ class Help(commands.Cog):
         await ctx.send(embed=embed)
        
 
-    @commands.command()
+    @commands.command(aliases=['help server'])
     async def server(self, ctx):
         embed = discord.Embed(color=16711680,description= 'Server Info Commands')
         embed.add_field(name='Member Count',value='`Usage /mc` \nShows Server Member Count')
